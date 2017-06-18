@@ -1,0 +1,72 @@
+html {
+	font-family: "Microsoft ChengHei", sans-serif;
+}
+
+.footer {
+	height: 150px;
+	width: 100%;
+	background-color: #1d1d1d;
+	padding-top: 50px;
+}
+
+.footer .words {
+	color: white;
+	text-align: center;
+}
+
+.header {
+	margin: 30px 0;
+}
+
+.logo-searchbar {
+	margin: 0 auto;	
+	width: 986px;
+}
+
+.logo{
+	display: inline;
+}
+
+.searchbar, .cart {
+	display: inline;
+	margin-left: 50px;
+}
+
+.searchbar input {
+	line-height: 2em;
+}
+
+.navbar-custom {
+    background-color:#6796d6;
+    color:#ffffff;
+    border-radius:0;
+    margin: 0;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color:#fff;
+}
+
+.navbar-custom .navbar-nav > .active > a {
+    color: #ffffff;
+    background-color:transparent;
+}
+
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus,
+.navbar-custom .navbar-nav > .active > a:hover,
+.navbar-custom .navbar-nav > .active > a:focus,
+.navbar-custom .navbar-nav > .open >a {
+    text-decoration: none;
+    background-color: #6796d6;
+}
+
+.navbar-custom .navbar-brand {
+    color:#eeeeee;
+}
+.navbar-custom .navbar-toggle {
+    background-color:#eeeeee;
+}
+.navbar-custom .icon-bar {
+    background-color:#6796d6;
+}

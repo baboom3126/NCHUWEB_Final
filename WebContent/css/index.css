@@ -1,0 +1,25 @@
+.brandZone, .productCate {
+	height: 400px;
+	width: 100%;
+	padding: 40px;
+}
+
+.brandZone {
+	background-color: #246cd0;
+}
+
+.BrandZoneTitle {
+	background-color: #ffffff;
+	width: 200px;
+	height: 320px;
+	text-align: center;
+}
+
+.BrandZoneTitle p {
+	font-size: 39px;
+	font-weight: bold;
+}
+
+.productCate {
+	background-color: #ffffff;
+}
