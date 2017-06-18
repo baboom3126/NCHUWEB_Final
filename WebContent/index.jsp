@@ -21,25 +21,32 @@
 
 <div class="col-md-8" >
 
-<a href="?cat=0" class="a1">全部商品</a>
-<%
+<a href="?cat=0" class="a1">全部商品</a><%
+int count=1;
 	String queryCode = "SELECT * FROM  `product_cates`";
 	database.connectDB();
 	database.query(queryCode);
 	ResultSet rs = database.getRS();
 	if(rs != null) {
-		while(rs.next()){				
+		while(rs.next()){
+      count++;
 			String id = rs.getString("id");
 			String name = rs.getString("name");
-%><a href="?cat=<%=id%>" class="a1"><%=name%></a>
-<%
+%><a href="?cat=<%=id%>" class="a1"><%=name%></a><%
 		}
 	}
 %>
+<style media="screen">
+  .a1{
+    width: calc(100%/<%=count%>)!important;
+  }
+</style>
+
+
+
 </div>
     <div class="col-md-2"></div>
 </div>
-
 
 
 <%
@@ -89,7 +96,7 @@ if(request.getParameter("cat") != null){
 		<%
 			}%>
 		<%
-			i++;	
+			i++;
 		}
 	}database.closeDB();
 }
@@ -154,7 +161,7 @@ if(request.getParameter("cat") != null){
 			%></div><%
 				}%>
 			<%
-				i++;	
+				i++;
 			}
 		}database.closeDB();
 		%>
@@ -199,7 +206,7 @@ if(request.getParameter("cat") != null){
 			%></div><%
 				}%>
 			<%
-				i++;	
+				i++;
 			}
 		}database.closeDB();
 		%>
