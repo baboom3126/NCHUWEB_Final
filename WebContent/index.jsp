@@ -159,12 +159,14 @@ if(request.getParameter("cat") != null){
 			%>
 			<div class="col-md-6">
 				<div class="thumbnail" style="margin-top:20px; height:400px;">
-				  <img src="<%=image%>" alt="..." height="150px" width="150px">
+				  <a href="./detail.jsp?id=<%=id%>">
+				  	<img src="<%=image%>" alt="..." height="150px" width="150px">
+				  </a>
 				  <div class="caption">
 					<h3 class="center"><%=name%></h3>
 					<p><%=description%></p>
 
-					<p class="center"><a href="./detail.jsp?id=<%=id%>" class="btn " role="button"style="background-color:#176D81; ">Button</a> </p>
+					<p class="center"><a href="./detail.jsp?id=<%=id%>" class="btn " role="button"style="background-color:#176D81; ">詳細資料</a> </p>
 
 				  </div>
 				</div>
@@ -206,11 +208,13 @@ if(request.getParameter("cat") != null){
 			%>
 			<div class="col-md-6">
 				<div class="thumbnail" style="margin-top:20px; height:400px;">
-				  <img src="<%=image%>" alt="..." height="150px" width="150px">
+				  <a href="./detail.jsp?id=<%=id%>">
+				  	<img src="<%=image%>" alt="..." height="150px" width="150px">
+				  </a>
 				  <div class="caption">
 					<h3 class="center"><%=name%></h3>
 					<p><%=description%></p>
-					<p class="center"><a href="#" class="btn " role="button"style="background-color:#176D81; ">Button</a> </p>
+					<p class="center"><a href="./detail.jsp?id=<%=id%>" class="btn " role="button"style="background-color:#176D81; ">詳細資料</a> </p>
 				  </div>
 				</div>
 			</div>
