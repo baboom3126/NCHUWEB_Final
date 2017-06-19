@@ -31,7 +31,7 @@
 						String id = rs.getString("id");
 						String firmID = rs.getString("firm_id");
 						String name = rs.getString("name");
-						if(dbPassword.equals(password)) {
+						if(dbPassword.equals(password)&& !firmID.equals("0")) {
 							session.setAttribute("adminName", name);
 							session.setAttribute("adminEmail", email);
 							session.setAttribute("adminID", id);
