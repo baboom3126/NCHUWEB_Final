@@ -11,6 +11,8 @@
       });
     </script>
 
+
+
   <div class="row">
     <div class="col-md-2"></div>
 
@@ -24,6 +26,24 @@
     <div class="col-md-2"></div>
 
   </div>
+
+<div class="row">
+  <div class="col-md-5">
+
+  </div>
+  <div class="col-md-2">
+    <form class="" name="search_form" id="search_form" action="search.jsp" method="post">
+    <input type="text" id="search" name="search" value="" style="100px;" placeholder="搜尋">
+      <input type="submit" name="" value="送出">
+      </form>
+  </div>
+  <div class="col-md-1">
+    <a href="#" onclick="document.getElementById('search_form').submit();" class="brand-logo" style="display:inline-block;"><i class="material-icons">search</i></a>
+
+  </div>
+</div>
+
+
 
   <div class="row">
 
@@ -94,7 +114,7 @@ if(request.getParameter("cat") != null){
 			<h3 class="center"><%=name%></h3>
 			<p>price:<%=price%></p>
 			<p><%=description%></p>
-			<p class="center"style="position:absolute;bottom:30px;left:30%;"><a href="./detail.jsp?id=<%=id%>" class="btn" role="button"style="background-color:#176D81; ">Button</a> </p>
+			<p class="center"style="position:absolute;bottom:30px;left:30%;"><a href="./detail.jsp?id=<%=id%>" class="btn" role="button"style="background-color:#176D81; ">詳細資訊</a> </p>
 
 		  </div>
 		</div>
@@ -166,7 +186,7 @@ if(request.getParameter("cat") != null){
 					<h3 class="center"><%=name%></h3>
 					<p><%=description%></p>
 
-					<p class="center"><a href="./detail.jsp?id=<%=id%>" class="btn " role="button"style="background-color:#176D81; ">詳細資料</a> </p>
+					<p class="center" style="position:absolute;bottom:30px;left:40%;"><a href="./detail.jsp?id=<%=id%>" class="btn " role="button"style="background-color:#176D81; ">詳細資料</a> </p>
 
 				  </div>
 				</div>
