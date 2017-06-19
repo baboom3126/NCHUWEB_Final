@@ -141,8 +141,12 @@ int count=1;
       <div class="card-content" >
           <h3><%= productName %><h5>$ <%= productPrice %></h5> </h3>
           
-        	<a data-toggle="tooltip" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:8080/NCHUWEB_Final/detail.jsp?id=<%=productID%>&uid=<%=accountID %>&amp;title=<%=productName %>"  title="" data-original-title="Share on Facebook" target="_blank">
+        	<a data-toggle="tooltip" href="https://www.facebook.com/sharer/sharer.php?u=http://nchuteam10.azurewebsites.net/NCHUWEB_Final/detail.jsp?id=<%=productID%>&uid=<%=accountID %>&amp;title=<%=productName %>"  title="" data-original-title="Share on Facebook" target="_blank">
         		<img src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png" width="48" height="48">
+        	</a>
+        	
+        	<a href="http://line.naver.jp/R/msg/text/?<%=productName %>%0D%0Ahttp://nchuteam10.azurewebsites.net/NCHUWEB_Final/detail.jsp?id=<%=productID%>&uid=<%=accountID %>">
+        		<img src="https://camo.githubusercontent.com/564036504b76c84af19353e39e7155a1e89f15f0/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f323634303031312f313739373137312f39643732373464632d366162332d313165332d383065622d3161383534333833373433312e6a7067" width="48" height="48" alt="用LINE傳送" />
         	</a>
           
           <hr>

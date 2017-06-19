@@ -95,7 +95,7 @@ if(name==null){
 //mail content
 String recipients = email;
 String subject = "會員認證信";
-String urlHead = "http://localhost:8080/NCHUWEB_Final/login.jsp?mode=activate&code=";
+String urlHead = "http://nchuteam10.azurewebsites.net/NCHUWEB_Final/login.jsp?mode=activate&code=";
 String content = "您好，" + name + "，請點選這個網址來開通帳號" + urlHead + outStr;
 
 //get properties and se

@@ -156,7 +156,7 @@ if(request.getParameter("cat") != null){
     <div class="card-content grey lighten-4">
       <div id="test4">
 		<%
-		queryCode = "SELECT  `p`.* ,SUM(`od`.`amount`) FROM  `order_details` as `od`INNER JOIN `products` as `p` ON `od`.`product_id`=`p`.`id` GROUP BY  `od`.`product_id` ORDER BY SUM(`od`.`amount`) DESC LIMIT 0 , 5";
+		queryCode = "SELECT  `p`.* ,SUM(`od`.`amount`) FROM  `order_details` as `od`INNER JOIN `products` as `p` ON `od`.`product_id`=`p`.`id` GROUP BY  `od`.`product_id` ORDER BY SUM(`od`.`amount`) DESC LIMIT 0 , 6";
 		database.connectDB();
 		database.query(queryCode);
 		rs = database.getRS();
@@ -205,7 +205,7 @@ if(request.getParameter("cat") != null){
 
       <div id="test5">
 		<%
-		queryCode = "SELECT * FROM products ORDER BY  created_at DESC LIMIT 0 , 5";
+		queryCode = "SELECT * FROM products ORDER BY  created_at DESC LIMIT 0 , 6";
 		database.connectDB();
 		database.query(queryCode);
 		rs = database.getRS();
