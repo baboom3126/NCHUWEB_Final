@@ -86,7 +86,7 @@
 	session.removeAttribute("orderAddress");
 	session.removeAttribute("orderName");
 	
-	response.sendRedirect("index.jsp");
+	response.sendRedirect("./index.jsp");
 %>
 
 

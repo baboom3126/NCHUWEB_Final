@@ -7,6 +7,7 @@
 	String productID = request.getParameter("id");
 	String productName = "", productImage = "", productDescription = "";
 	String productPrice = "", productFirmID = "", productCreatedAt = "";
+	String accountID = (String)session.getAttribute("accountID");
 	String sql = "SELECT * FROM products WHERE id = " + productID;
 	database.connectDB();
 	database.query(sql);
@@ -139,6 +140,11 @@ int count=1;
     <div class="card-stacked">
       <div class="card-content" >
           <h3><%= productName %><h5>$ <%= productPrice %></h5> </h3>
+          
+        	<a data-toggle="tooltip" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:8080/NCHUWEB_Final/detail.jsp?id=<%=productID%>&uid=<%=accountID %>&amp;title=<%=productName %>"  title="" data-original-title="Share on Facebook" target="_blank">
+        		<img src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png" width="48" height="48">
+        	</a>
+          
           <hr>
           <p><%= productDescription %></p>
       </div>

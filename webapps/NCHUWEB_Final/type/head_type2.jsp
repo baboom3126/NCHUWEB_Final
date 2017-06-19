@@ -6,14 +6,14 @@
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>生活電商</title>
 
-      <script src="../../admin/js/jquery.js" charset="utf-8"></script>
-      <script src="../../admin/js/bootstrap.js" charset="utf-8"></script>
-      <script src="../../admin/js/materialize.js" charset="utf-8"></script>
+      <script src="../admin/js/jquery.js" charset="utf-8"></script>
+      <script src="../admin/js/bootstrap.js" charset="utf-8"></script>
+      <script src="../admin/js/materialize.js" charset="utf-8"></script>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-      <link href="../../admin/css/bootstrap.css" rel="stylesheet">
-      <link href="../../admin/css/materialize.css" rel="stylesheet">
-        <link href="../../admin/css/main.css" rel="stylesheet">
+      <link href="../admin/css/bootstrap.css" rel="stylesheet">
+      <link href="../admin/css/materialize.css" rel="stylesheet">
+        <link href="../admin/css/main.css" rel="stylesheet">
 
         <style media="screen">
           body{
