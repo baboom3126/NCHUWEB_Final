@@ -2,10 +2,7 @@
 <%@ page language="java" import="java.sql.*" %>
 <%@ page import="java.io.*,java.util.*,java.text.*"%>
 <%@ page import="java.util.List,java.util.Iterator,java.util.Date,java.io.File" %>
-<%@ page import="org.apache.commons.fileupload.servlet.ServletFileUpload" %>
-<%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory"%>
 <%@ page import="org.apache.commons.fileupload.*"%>
-<%@ page import="org.apache.commons.io.FilenameUtils"%>
 
 <%@ include file="layout/beforeBody.jsp" %>
 <%@ include file="layout/sideNav.jsp" %>
@@ -34,7 +31,7 @@
 </script>
 <%
 if(!session.getAttribute("adminFirmID").equals("1")){
-	response.sendRedirect("./index.jsp");	
+	response.sendRedirect("./index.jsp");
 }%>
 
 <%
@@ -57,14 +54,14 @@ if(!session.getAttribute("adminFirmID").equals("1")){
 			firm_id = rs.getString("AUTO_INCREMENT");
 			}
 		}
-		
+
 		String sql="INSERT INTO team10.firms (name,description,page_id)VALUES(?,?,?);";
 		PreparedStatement ps = database.getCon().prepareStatement(sql);
 		ps.setString(1, firmname);
 		ps.setString(2, description);
 		ps.setString(3, "1");
 		ps.executeUpdate();
-		
+
 		sql="INSERT INTO team10.accounts(firm_id,status,name,birthday,email,password) VALUES (?,?,?,?,?,?);";
 		ps = database.getCon().prepareStatement(sql);
 		ps.setString(1, firm_id);
@@ -74,8 +71,8 @@ if(!session.getAttribute("adminFirmID").equals("1")){
 		ps.setString(5, email);
 		ps.setString(6, password);
 		ps.executeUpdate();
-		
-		
+
+
 		response.sendRedirect("./index.jsp");
 	}database.closeDB();
 %>

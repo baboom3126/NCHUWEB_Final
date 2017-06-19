@@ -2,10 +2,6 @@
 <%@ page language="java" import="java.sql.*" %>
 <%@ page import="java.io.*,java.util.*,java.text.*"%>
 <%@ page import="java.util.List,java.util.Iterator,java.util.Date,java.io.File" %>
-<%@ page import="org.apache.commons.fileupload.servlet.ServletFileUpload" %>
-<%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory"%>
-<%@ page import="org.apache.commons.fileupload.*"%>
-<%@ page import="org.apache.commons.io.FilenameUtils"%>
 
 <%@ include file="layout/beforeBody.jsp" %>
 
@@ -23,17 +19,17 @@
 		String imageFile="";
 		String imageName = "";
 		database.connectDB();
-		
+
 		out.println("here");
 		out.println(redirectURL);
 		//out.println(imageName);
 		database.addProduct(name, image, description, price, firmID, cateID);
 		//database.addProduct(name, description, price, firmID, cateID);
-				
+
 		database.closeDB();
-				
+
 		response.sendRedirect(redirectURL);
-		
+
 
 	    /* //檔案上傳存放位置
 	    String saveDirectory = application.getRealPath("/upload");
@@ -98,9 +94,9 @@
 	    } */
 
 
-		
+
 	}
-	
+
 	if(request.getParameter("modify") != null) {
 		String id = request.getParameter("proID");
 		String name = request.getParameter("name");
@@ -116,7 +112,7 @@
 
 		response.sendRedirect(redirectURL);
 	}
-	
+
 	if(request.getParameter("delete") != null) {
 		String pc_id = request.getParameter("id");
 		database.connectDB();
@@ -124,8 +120,8 @@
 		database.closeDB();
 		response.sendRedirect("productCate.jsp");
 	}
-	
-	
+
+
 %>
 
 <%@ include file="layout/sideNav.jsp" %>
