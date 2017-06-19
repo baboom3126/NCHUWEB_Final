@@ -35,6 +35,9 @@
     <script type="text/javascript">
       $(document).ready(function(){
         $('.tooltipped').tooltip({delay: 50});
+        $('.button-collapse').sideNav({
+          closeOnClick: true
+        });
       });
     </script>
   </head>

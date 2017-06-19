@@ -10,6 +10,9 @@
     <title></title>
     <script type="text/javascript">
       $(document).ready(function(){
+        $('.button-collapse').sideNav({
+          closeOnClick: true
+        });
         $('.tooltipped').tooltip({delay: 50});
       });
     </script>
@@ -17,23 +20,26 @@
   <body>
 
 
-  <div class="container" style="margin-left:20%">
+  <div class="container">
+
+<div class="row">
 
     <div class="col s12 m7">
       <h2 class="header">個人資訊</h2>
       <hr>
     </div>
+</div>
 
 
     <div class="row">
       <form class="col s12">
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col s12 m6 l6">
             <i class="material-icons prefix">account_circle</i>
             <input id="icon_account" type="text" class="validate">
             <label for="icon_account">姓名</label>
           </div>
-          <div class="input-field col s6">
+          <div class="input-field col s12 m6 l6">
             <i class="material-icons prefix">vpn_key</i>
             <input id="icon_passwd" type="text" class="validate">
             <label for="icon_passwd">密碼</label>
@@ -42,12 +48,12 @@
 
 
         <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col s12 m6 l6">
             <i class="material-icons prefix">today</i>
             <input id="icon_birthday" type="date" class="validate">
             <label for="icon_birthday">生日</label>
           </div>
-          <div class="input-field col s6">
+          <div class="input-field col s12 m6 l6">
             <i class="material-icons prefix">comment</i>
             <input id="icon_memo" type="tel" class="validate">
             <label for="icon_memo">備註</label>
