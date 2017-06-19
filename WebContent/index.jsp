@@ -34,7 +34,6 @@
   <div class="col-md-2">
     <form class="" name="search_form" id="search_form" action="search.jsp" method="post">
     <input type="text" id="search" name="search" value="" style="100px;" placeholder="搜尋">
-      <input type="submit" name="" value="送出">
       </form>
   </div>
   <div class="col-md-1">
