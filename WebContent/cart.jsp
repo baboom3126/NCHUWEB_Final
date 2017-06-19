@@ -17,7 +17,7 @@
 					newCart[i][0] = cart[i][0];
 					newCart[i][1] = cart[i][1];
 				}
-				for(int j=cancelID+1;j<newCart.length;j++) {
+				for(int j=cancelID+1;j<=newCart.length;j++) {
 					newCart[j-1][0] = cart[j][0];
 					newCart[j-1][1] = cart[j][1];
 				}
@@ -128,6 +128,15 @@ $(document).ready(function(){
 });
 </script>
 
+<%
+	String orderName = "";
+	String orderAddress = "";
+	if(session.getAttribute("orderName") != null) {
+		orderName = (String)session.getAttribute("orderName");
+		orderAddress = (String)session.getAttribute("orderAddress");
+	}
+%>
+
 <form class="" action="purchase.jsp" method="post">
 
 <div class="row" id="order_info">
@@ -139,14 +148,14 @@ $(document).ready(function(){
 </div>
   <div class="col-md-4">
    <label for="order_name">訂購人</label>
-   <input type="text" name="order_name"  id="order_name" value="">
+   <input type="text" name="order_name"  id="order_name" value="<%= orderName %>">
   </div>
 <div class="col-md-1">
 </div>
 
 <div class="col-md-4">
  <label for="order_name">地址</label>
- <input type="text" name="order_address"  id="order_name" value="">
+ <input type="text" name="order_address"  id="order_name" value="<%= orderAddress %>">
 </div>
 
 <div class="col-md-12 center" style="margin-bottom:40px;">
