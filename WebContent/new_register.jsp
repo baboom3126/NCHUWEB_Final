@@ -76,7 +76,6 @@ if(name==null){
     <title></title>
   </head>
   <body>
-<%=father_id%>
     <div class="container">
      <div class="col s12 m7">
        <h2 class="header">註冊</h2>

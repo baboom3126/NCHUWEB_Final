@@ -29,7 +29,12 @@
 				
 				<%
 					String cateId = request.getParameter("id");
-					String queryCode = "SELECT id, name, price FROM products WHERE cate_id = " + cateId;
+					String queryCode="";
+					if (adminFirmID.equals("1")){
+						queryCode = "SELECT id, name, price FROM products WHERE cate_id = " + cateId;
+					}else{
+						queryCode = "SELECT id, name, price FROM products WHERE cate_id = " + cateId+" and firm_id =" + adminFirmID;
+					}
 					database.connectDB();
 					database.query(queryCode);
 					ResultSet rs = database.getRS();
