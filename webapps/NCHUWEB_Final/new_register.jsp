@@ -57,7 +57,7 @@ database.closeDB();
 
 
 
-String sql = "insert into accounts (name, birthday,email,password,father_id,firm_id) values (?,?,?,?,?,?)";
+String sql = "insert into accounts (name, birthday,email,password,father_id,firm_id,validation_code) values (?,?,?,?,?,?,?)";
 
 if(name!=null&&check!=1){
   database.connectDB();
@@ -70,6 +70,7 @@ ps.setString(3,email);
 ps.setString(4,pwd);
 ps.setString(5,father_id);
 ps.setInt(6,firm_id);
+ps.setString(7,outStr);
 int a=ps.executeUpdate();
 
 messageDB="註冊成功";
@@ -95,14 +96,14 @@ if(name==null){
 //mail content
 String recipients = email;
 String subject = "會員認證信";
-String urlHead = "http://nchuteam10.azurewebsites.net/NCHUWEB_Final/login.jsp?mode=activate&code=";
+String urlHead = "http://localhost:8080/NCHUWEB_Final/login.jsp?mode=activate&code=";
 String content = "您好，" + name + "，請點選這個網址來開通帳號" + urlHead + outStr;
 
 //get properties and se
 final String userName = "nchuwebfinal@gmail.com";
 final String password = "asdf1234-";
 
-Properties props = new Properties(); 
+Properties props = new Properties();
 
 props.put("mail.smtp.host", "smtp.gmail.com");
 props.put("mail.smtp.from", userName);
@@ -113,13 +114,13 @@ props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 props.put("mail.smtp.socketFactory.port", "465");
 
 Session se = Session.getInstance(props, new Authenticator() {  //use javax.mail.Session
-protected PasswordAuthentication getPasswordAuthentication() { 
- return new PasswordAuthentication(userName, password); 
-} 
-}); 
+protected PasswordAuthentication getPasswordAuthentication() {
+ return new PasswordAuthentication(userName, password);
+}
+});
 
-try { 
-  
+try {
+
 // Define message
 MimeMessage message = new MimeMessage(se);
 try{
@@ -143,12 +144,12 @@ message.setContent(multipart);
 
 // Send message
 Transport.send(message);
-} catch (MessagingException e) { 
+} catch (MessagingException e) {
     if (e.getMessage().equals("No recipient addresses")) {
     } else {
-        throw new RuntimeException(e); 
+        throw new RuntimeException(e);
     }
-} 
+}
 %>
 
 
