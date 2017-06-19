@@ -66,20 +66,24 @@
     </div>
 
     <div class="row">
-			<div class="col-md-2 center" style="background-color:rgba(0,0,0,0.15)">
-<h5>id</h5>
+			<div class="col-md-2 center" style="background-color:rgba(0,0,0,0.15);">
+<h5>訂單序號</h5>
 		</div>
 
-		<div class="col-md-2 center" style="background-color:rgba(0,0,0,0.15)">
+		<div class="col-md-2 center" style="background-color:rgba(0,0,0,0.15);">
 <h5>狀態</h5>
 	</div>
 
-	<div class="col-md-4 center" style="background-color:rgba(0,0,0,0.15)">
-<h5>地址</h5>
+	<div class="col-md-2 center" style="background-color:rgba(0,0,0,0.15);">
+<h5>總金額</h5>
 </div>
 
-<div class="col-md-4 center" style="background-color:rgba(0,0,0,0.15)">
+	<div class="col-md-4 center" style="background-color:rgba(0,0,0,0.15);">
 <h5>訂購時間</h5>
+</div>
+
+<div class="col-md-2 center" style="background-color:rgba(0,0,0,0.15);">
+<h5>詳細</h5>
 </div>
 
 
@@ -98,29 +102,37 @@ if(rs!=null)
 {
 	while(rs.next())
 	{
-		int id = rs.getInt("account_id");
+		int id = rs.getInt("id");
 		int status = rs.getInt("status");
 		String address= rs.getString("address");
 		String order_time = rs.getString("order_time");
+		String total = rs.getString("total");
 
 
 
 
 %>
 
-<div class="row">
+<div class="row" style="font-size:20px;">
 
 	<div class="col-md-2 center">
-		<h5><%=id%></h5>
+		<%=id%>
 	</div>
 	<div class="col-md-2 center">
-		<h5><%=status%></h5>
+		<%=status%>
 	</div>
-	<div class="col-md-4 center">
-		<h5><%=address%></h5>
+	<div class="col-md-2 center">
+		<%=total%>
 	</div>
+
 	<div class="col-md-4 center">
-		<h5><%=order_time%></h5>
+		<%=order_time%>
+	</div>
+	<div class="col-md-2 center">
+			<form class="" action="orderDetail.jsp" method="get">
+				<input type="hidden" name="id" value="<%=id%>">
+				<input type="submit"  class="btn" name="" value="詳細資訊">
+			</form>
 	</div>
 
 </div>
@@ -142,7 +154,7 @@ database.closeDB();
 
 
     <div class="row"></div>
-
+<br><br><br>
   </div>
 	<br><br><br><br><br>
 
