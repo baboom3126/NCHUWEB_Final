@@ -116,7 +116,11 @@
 $(document).ready(function(){
 	var a;
 	var grandTotal=0;
-	for(a=0;a<<% out.println(cart.length); %>;a++){
+	var length = 1;
+	<% if(session.getAttribute("cartProduct")!=null) { %>
+		length = <% out.println(cart.length); %>;
+	<% } %>
+	for(a=0;a<length;a++){
 		$("#total"+a).html($("#amount"+a).text()*$("#price"+a).text());	
 		grandTotal = grandTotal + ($("#amount"+a).text()*$("#price"+a).text());
 	}
