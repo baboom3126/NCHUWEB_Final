@@ -1,6 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
+<%@ page language="java" import="java.sql.*" %>
+<%@ page import="java.io.*,java.util.*,java.text.*"%>
+<%@ page import="java.util.List,java.util.Iterator,java.util.Date,java.io.File" %>
 <%@include file="./layout/beforeBody.jsp" %>
+
+<%
+	if(session.getAttribute("accountName") != null) {
+		response.sendRedirect("./index.jsp");
+	}
+
+	String validateStatus = "";
+	String validationCode = "";
+	
+	if(request.getParameter("mode") != null) {
+		validationCode = request.getParameter("code");
+		database.connectDB();
+		try{
+			String sql = "UPDATE accounts SET status = 1 WHERE validation_code = ?";
+			PreparedStatement ps=database.getCon().prepareStatement(sql);
+			ps.setString(1,validationCode);
+			ps.executeUpdate();
+			
+			validateStatus = "認證成功";
+		} catch (Exception ex) {
+			out.println(ex);
+		}
+		
+		database.closeDB();
+	}
+%>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -12,6 +42,7 @@
 
 
     <div class="container">
+    <%= validateStatus %>
     <div class="col s12 m7">
       <h2 class="header">LOGIN</h2>
       <hr>
@@ -26,14 +57,40 @@
           <form class="form1" action="login.jsp" method="post">
           <div class="card-content" style="text-align:left;">
 <div class="container">
-
               <label for="id" id="label1">帳號</label>
               <input type="text" name="id" id="id1" placeholder="" >
               <label for="pwd" id="label2">密碼</label>
               <input type="password" name="pwd" id="pwd1" placeholder="">
           </div></div>
           <div class="card-action center">
-<button type="submit" name="button0" class="waves-effect waves-light btn" style="background-color:#176D81;">登入</button>
+          
+          <%
+          if(request.getParameter("login") != null) {
+      		String email = request.getParameter("id");
+      		String password = request.getParameter("pwd");
+				String failMessage = "<p style='color:red'>帳號密碼錯誤或尚未認證</p>";
+				database.connectDB();
+				database.query("SELECT id, name, password FROM accounts WHERE email = '" + email + "' AND status = 1");
+				ResultSet rs = database.getRS();
+				if(rs != null) {
+					while(rs.next()){
+						String dbPassword = rs.getString("password");
+						String id = rs.getString("id");
+						String name = rs.getString("name");
+						if(dbPassword.equals(password)) {
+							session.setAttribute("accountName", name);
+							session.setAttribute("accountEmail", email);
+							session.setAttribute("accountID", id);
+							response.sendRedirect("./index.jsp");
+						}
+					}
+				}
+				out.println(failMessage);
+				database.closeDB();
+			}
+		%>
+          
+<button type="submit" name="login" class="waves-effect waves-light btn" style="background-color:#176D81;">登入</button>
 <button type="button" class="btn" name="button2" onclick="location.href='register.jsp'" style="background-color:#176D81;">註冊</button>
           </div>
         </form>

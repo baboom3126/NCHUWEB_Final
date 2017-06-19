@@ -3,6 +3,13 @@
 <%@include file="./layout/beforeBody.jsp" %>
 <%@include file="./layout/sidenav.jsp" %>
 
+<%
+	if(session.getAttribute("accountName") == null){
+		response.sendRedirect("./login.jsp");	
+	}
+	String adminName = (String)session.getAttribute("accountName");
+%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,25 +17,28 @@
     <title></title>
     <script type="text/javascript">
       $(document).ready(function(){
-        $('.button-collapse').sideNav({
-          closeOnClick: true
-        });
         $('.tooltipped').tooltip({delay: 50});
+        $('.button-collapse').sideNav({
+            closeOnClick: true
+          });
+
       });
     </script>
   </head>
   <body>
 
 
-  <div class="container">
+    <div class="container">
 
 <div class="row">
+
 
     <div class="col s12 m7">
       <h2 class="header">個人資訊</h2>
       <hr>
     </div>
-</div>
+  </div>
+    
 
 
     <div class="row">
