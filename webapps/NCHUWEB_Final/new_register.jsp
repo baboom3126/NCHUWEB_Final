@@ -73,7 +73,7 @@ ps.setInt(6,firm_id);
 ps.setString(7,outStr);
 int a=ps.executeUpdate();
 
-messageDB="註冊成功";
+messageDB="註冊成功<br>請至信箱進行認證";
 }
 
 catch(Exception e){
@@ -177,6 +177,7 @@ Transport.send(message);
 <h5>您好!</h5>
 <h5><%=name%></h5>
 <h5><%=messageDB%></h5>
+<h5>請至信箱進行認證</h5>
 
 <button type="button" class="btn " name="button" onclick="location.href='login.jsp'">繼續</button>
 
