@@ -30,7 +30,14 @@
 			<br/>
 			<a class="item" href="#">
 				<span style="font-size:14pt">會員管理</span>
-			</a>
+			</a><br/>
+			<%
+			String firmID = (String)session.getAttribute("adminFirmID");
+			if (firmID.equals("1")){%>
+				<a class="item" href="#">
+					<span style="font-size:14pt">新增廠商</span>
+				</a>
+			<%}%>
 		</div>
 	</div>
 </div>
