@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.sql.*" %>
 <%@include file="./layout/beforeBody.jsp" %>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.tooltipped').tooltip({delay: 50});
+        $('.button-collapse').sideNav({
+          closeOnClick: true
+        });
+      });
+    </script>
   <div class="row">
     <div class="col-md-2"></div>
 
