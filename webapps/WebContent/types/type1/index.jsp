@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../../admin/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="../../admin/css/materialize.css">
-    <link rel="stylesheet" href="../../admin/css/main.css">
+    <%-- <link rel="stylesheet" href="../../admin/css/main.css"> --%>
     <script src="../../admin/js/jquery.js" charset="utf-8"></script>
     <script src="../../admin/js/bootstrap.js" charset="utf-8"></script>
 
