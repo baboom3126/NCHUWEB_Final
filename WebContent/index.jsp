@@ -84,7 +84,7 @@ if(request.getParameter("cat") != null){
 			<h3 class="center"><%=name%></h3>
 			<p>price:<%=price%></p>
 			<p><%=description%></p>
-			<p class="center"><a href="#" class="btn " role="button"style="background-color:#176D81;">Button</a> </p>
+			<p class="center"style="position:absolute;bottom:30px;left:30%;"><a href="./detail.jsp?<%=id%>" class="btn" role="button"style="background-color:#176D81; ">Button</a> </p>
 		  </div>
 		</div>
 		</div>
@@ -152,7 +152,7 @@ if(request.getParameter("cat") != null){
 				  <div class="caption">
 					<h3 class="center"><%=name%></h3>
 					<p><%=description%></p>
-					<p class="center"><a href="#" class="btn " role="button"style="background-color:#176D81; ">Button</a> </p>
+					<p class="center"><a href="./detail.jsp?<%=id%>" class="btn " role="button"style="background-color:#176D81; ">Button</a> </p>
 				  </div>
 				</div>
 			</div>
