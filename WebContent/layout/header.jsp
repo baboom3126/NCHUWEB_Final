@@ -43,7 +43,7 @@
       <li class="bold"><a href="member.jsp" class="waves-effect waves-teal">會員中心</a></li>
       <li class="bold"><a href="order.jsp" class="waves-effect waves-teal">查詢訂單</a></li>
       <li class="bold"><a href="point.jsp" class="waves-effect waves-teal">查詢積分</a></li>
-      <li><a href="index.html" class="waves-effect waves-light btn yellow darken-2 grey-text text-darken-4 " >Home</a></li>
+      <li><a href="index.jsp" class="waves-effect waves-light btn yellow darken-2 grey-text text-darken-4 " >Home</a></li>
 
     </ul>
 <div class="row" style="background-color:#FCE38A;background-image:url(./image/4.jpg); height:430px; color:white; text-align:center; opacity:0.85;">
