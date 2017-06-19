@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+	
+	
 <div class="ui vertical inverted sticky menu fixed top" style="left: 0px; top: -1px; width: 250px !important; height: 1813px !important; margin-top: 0px;">
 	<div class="item">
 		<a class="ui logo icon image" href="./index.jsp">
@@ -32,12 +34,15 @@
 				<span style="font-size:14pt">會員管理</span>
 			</a><br/>
 			<%
-			String firmID = (String)session.getAttribute("adminFirmID");
-			if (firmID.equals("1")){%>
-				<a class="item" href="#">
-					<span style="font-size:14pt">新增廠商</span>
-				</a>
-			<%}%>
+			String adminFirmID="123";
+			if(session.getAttribute("adminFirmID") != null){
+			adminFirmID = (String)session.getAttribute("adminFirmID");
+			}
+			if (adminFirmID.equals("1")){
+			%><a class="item" href="newfirm.jsp">
+				<span style="font-size:14pt">新增廠商</span>
+			</a><%}%>
+			
 		</div>
 	</div>
 </div>
