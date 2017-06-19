@@ -10,14 +10,14 @@
 	//再跳到登入畫面前先收集訂單資料
 	String orderName = request.getParameter("order_name");
 	String orderAddress = request.getParameter("order_address");
-	
+
 	session.setAttribute("orderName", orderName);
 	session.setAttribute("orderAddress", orderAddress);
-	
+
 	if(session.getAttribute("accountName") == null) { //判斷是否登入
 		response.sendRedirect("login.jsp");
 	}
-	
+
 	//開始撈資料放資料
 	//orders table需要資料：account_id, total, address
 	//order_details table 需要資料：order_id, product_id, firm_id, amount
@@ -47,7 +47,7 @@
 	ps.setInt(2,total);
 	ps.setString(3,address);
 	int a=ps.executeUpdate();
-	
+
 	int orderID = -1;
 	database.query("SELECT LAST_INSERT_ID()");
 	ResultSet rs = database.getRS();
@@ -56,7 +56,7 @@
     }
 	out.println(orderID);
 	database.closeDB();
-	
+
 	for(int i=0;i<cart.length;i++) {
 		String productID = cart[i][0];
 		String amount = cart[i][1];
@@ -79,14 +79,14 @@
 		ps1.setString(4,amount);
 		int a1 = ps1.executeUpdate();
 	}
-	
-	
+
+
 	//結束後，清除購物車，返回首頁
 	session.removeAttribute("cartProduct");
 	session.removeAttribute("orderAddress");
 	session.removeAttribute("orderName");
-	
-	response.sendRedirect("./index.jsp");
+
+	response.sendRedirect("order.jsp");
 %>
 
 

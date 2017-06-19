@@ -4,7 +4,7 @@
 
 <%
 	String[][] cart = (String[][])session.getAttribute("cartProduct");
-
+	String adminName = (String)session.getAttribute("accountName");
 	if(request.getParameter("cancel") != null) {
 		int cancelID = Integer.parseInt(request.getParameter("cancel"));
 		if(cart.length == 1) { //唯一一個被移除
@@ -98,6 +98,11 @@
     }
     %>
 	</table>
+
+	<div class="center">
+		<br>
+		<a href="./index.jsp" class="btn">繼續購物</a>
+	</div>
           <hr>
     		</div>
 
@@ -151,7 +156,7 @@ $(document).ready(function(){
 </div>
   <div class="col-md-4">
    <label for="order_name">訂購人</label>
-   <input type="text" name="order_name"  id="order_name" value="<%= orderName %>">
+   <input type="text" name="order_name"  id="order_name" value="<%= adminName %> " disabled>
   </div>
 <div class="col-md-1">
 </div>
