@@ -3,9 +3,7 @@
 <nav>
   <div class="nav-wrapper row" style="background-color:#233142;">
     <div class="col-md-2">
-    <span style="font-size:16px; margin-left:10px; "> </span>
-    <input type="text" name="" value="" style="width:180px;height:30px;background-color:white;color:grey;margin-left:5px; display:inline-block;" >
-    <a href="./index.jsp" class="brand-logo right" style="display:inline-block;"><i class="material-icons">search</i></a>
+
   </div>
   <div class="col-md-8">
 
@@ -19,7 +17,7 @@
      <%
      	if(session.getAttribute("accountName") != null) {
      %>
-     		<li><a class="dropdown-button a_nav" href="./member.jsp" data-activates="dropdown1" ><i class="material-icons left">list</i>會員中心<i class="material-icons right">arrow_drop_down</i></a></li>	
+     		<li><a class="dropdown-button a_nav" href="./member.jsp" data-activates="dropdown1" ><i class="material-icons left">list</i>會員中心<i class="material-icons right">arrow_drop_down</i></a></li>
      <%
      	} else {
      %>
@@ -38,7 +36,7 @@
      		<li class="divider"></li>
      		<li><a href="./order.jsp" style=" color:white;"><i class="material-icons left">info</i>查詢訂單</a></li>
      		<li><a href="./member.jsp?query" style=" color:white;"><i class="material-icons left">forward_30</i>查詢積分</a></li>
-     		<li><a href="./logout.jsp?logout=1" style=" color:white;"><i class="material-icons left">undo</i>登出</a></li>     			
+     		<li><a href="./logout.jsp?logout=1" style=" color:white;"><i class="material-icons left">undo</i>登出</a></li>
     <%
      	}
    	%>
