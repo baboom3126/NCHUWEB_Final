@@ -11,7 +11,7 @@
 
 
 
-  <div class="fixed-action-btn vertical hide-on-med-and-down" style="margin-right:90%">
+  <div class="fixed-action-btn vertical" style="margin-right:90%">
     <a class="btn-floating btn-large red">
       <i class="large material-icons">view_list</i>
     </a>
