@@ -26,12 +26,12 @@
 				for(int j=0;j<newCart.length;j++) {
 					newCart[j][0] = cart[j+1][0];
 					newCart[j][1] = cart[j+1][1];
-				}	
+				}
 				//out.println("3");
 			}
 			session.setAttribute("cartProduct", newCart);
 		}
-		
+
 		response.sendRedirect("cart.jsp");
 	}
 %>
@@ -76,7 +76,7 @@
     			}
     		}
     %>
-    
+
     	<tr>
       		<th class="th1" height="60px"><% out.println(i+1); %></th>
       		<th class="th1"><%= name %></th>
@@ -86,9 +86,15 @@
       		<th class="th1" id="total<%= i %>"></th>
       		<th class="th1"><a href="cart.jsp?cancel=<% out.println(i); %>">取消</a></th>
   		</tr>
-    
+
     <%
-    	}
+	}%>
+	<div class="center">
+  			<h5>總價：<span id="grandTotal"></span></h5><br>
+           <button type="button" class="btn  #81c784 green lighten-2"name="button" id="btn1">下一步 訂購</button>
+         </div>
+
+			<%
     }
     %>
 	</table>
@@ -99,10 +105,7 @@
 <br>
 </div>
 
- <div class="center">
- 			<h5>總價：<span id="grandTotal"></span></h5><br>
-          <button type="button" class="btn  #81c784 green lighten-2"name="button" id="btn1">下一步 訂購</button>
-        </div>
+
 
         <div class="line4">
 <br>
@@ -121,7 +124,7 @@ $(document).ready(function(){
 		length = <% out.println(cart.length); %>;
 	<% } %>
 	for(a=0;a<length;a++){
-		$("#total"+a).html($("#amount"+a).text()*$("#price"+a).text());	
+		$("#total"+a).html($("#amount"+a).text()*$("#price"+a).text());
 		grandTotal = grandTotal + ($("#amount"+a).text()*$("#price"+a).text());
 	}
 	$("#grandTotal").html(grandTotal);
