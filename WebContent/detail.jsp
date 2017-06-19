@@ -147,7 +147,7 @@ int count=1;
           <span style="font-size:22px">數量</span>
           <input name="cartProductID" type="hidden" value="<%=productID%>">
           <select name="cartProductAmount" style="display: inline; width: 120px">
-          	<% for(int i=0; i<=10; i++){ %>
+          	<% for(int i=1; i<=10; i++){ %>
           		<option><%= i %></option>
           	<% } %>
           </select>
