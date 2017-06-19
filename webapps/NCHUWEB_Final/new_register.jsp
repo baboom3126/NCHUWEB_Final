@@ -177,7 +177,6 @@ Transport.send(message);
 <h5>您好!</h5>
 <h5><%=name%></h5>
 <h5><%=messageDB%></h5>
-<h5>請至信箱進行認證</h5>
 
 <button type="button" class="btn " name="button" onclick="location.href='login.jsp'">繼續</button>
 
