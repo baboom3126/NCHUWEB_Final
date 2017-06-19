@@ -5,6 +5,9 @@
 
 <%
 	String productID = request.getParameter("id");
+	if(request.getParameter("uid") != null) {
+		session.setAttribute("suggestID", request.getParameter("uid"));
+	}
 	String productName = "", productImage = "", productDescription = "";
 	String productPrice = "", productFirmID = "", productCreatedAt = "";
 	String accountID = (String)session.getAttribute("accountID");
