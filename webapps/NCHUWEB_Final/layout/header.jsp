@@ -60,6 +60,7 @@
       { %>
         <li class="bold"><a href="./login.jsp" class="waves-effect waves-teal"><i class="material-icons left">touch_app</i><span style="font-size:14pt">登入</span></a></li>
   <%  }%>
+  <li class="bold"><a href="./cart.jsp" class="waves-effect waves-teal"><i class="material-icons left">shopping_cart</i><span style="font-size:14pt">購物車</span></a></li>
 
   <li><a href="index.jsp" class="waves-effect waves-light btn yellow darken-2 grey-text text-darken-4 " ><span style="font-size:14pt">Home</span></a></li>
 

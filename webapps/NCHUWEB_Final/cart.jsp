@@ -35,6 +35,15 @@
 		response.sendRedirect("cart.jsp");
 	}
 %>
+		<script>
+      $(document).ready(function(){
+        $('.tooltipped').tooltip({delay: 50});
+        $('.button-collapse').sideNav({
+            closeOnClick: true
+          });
+
+      });
+    </script>
 
   <div class="row">
     <div class="col-md-2"></div>
