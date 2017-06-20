@@ -90,12 +90,43 @@
 	}
 
 
+	
+	//回饋給推薦人
+	sql="select father_id from accounts where id="+accountID;
+	database.query(sql);
+	rs = database.getRS();
+	String father_id="";
+	if(rs != null) {
+		while(rs.next()){
+			father_id = rs.getString("father_id");
+		}
+	}
+	sql="select points from accounts where id="+father_id;
+	database.connectDB();
+	database.query(sql);
+	rs = database.getRS();
+	int points=0;
+	if(rs != null) {
+		while(rs.next()){
+			points = rs.getInt("points");
+		}
+	}
+	points+=total*0.05;
+	
+	sql = "UPDATE accounts SET points = ? where id=?";
+	ps=database.getCon().prepareStatement(sql);
+	ps.setInt(1,points);
+	ps.setString(2,father_id);
+	a=ps.executeUpdate();
+	
+	
 	//結束後，清除購物車，返回首頁
 	session.removeAttribute("cartProduct");
 	session.removeAttribute("orderAddress");
 	session.removeAttribute("orderName");
 
 	response.sendRedirect("order.jsp");
+	
 	}
 %>
 
