@@ -32,31 +32,31 @@
            <form class="form1" action="new_register.jsp" method="post" id="form1">
            <div class="card-content" style="text-align:left;">
  <div class="container">
-         <div class="col-md-12">
+         <div class="col s12 m12 l12">
                <label for="name1" id="label1">姓名</label>
                <input type="text" name="name1" value="" id="name1">
         </div>
 
-          <div class="col-md-12">
-               <label for="id" id="label2">帳號(email)</label><br>
+          <div class="col s12 m12 l12">
+               <label for="id" id="label2">帳號(email)</label><button type="button" name="button" class="btn" onclick="validation()" style="float:right; background-color:#176D81;">驗證</button><br>
                <input type="email" name="email" placeholder="" id="account1" style="width:80%;">
-                 <button type="button" name="button" class="btn" onclick="validation()" style="float:right; background-color:#176D81;">驗證</button>
+
 
           </div>
 
-          <div class="col-md-12">
+          <div class="col s12 m12 l12">
 
                <label for="password" id="label3">密碼</label>
 
                <input type="password" name="pwd" placeholder="" id="password">
            </div>
- <div class="col-md-6">
+ <div class="col s12 m6">
    <label for="date1" id="label4">生日</label>
 
    <input type="date" name="date1" id="date1" class="datepicker">
 
  </div>
- <div class="col-md-6">
+ <div class="col s12 m6">
 
 
                <label for="father_id">推薦人email(如無不用填寫)</label>
