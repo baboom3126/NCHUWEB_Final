@@ -132,7 +132,7 @@ try{
   System.out.println("## Bad address:"+InternetAddress.parse(recipients, false));
   return;
 }
-message.setSubject(subject);
+message.setSubject(subject , "UTF-8");
 
 Multipart multipart = new MimeMultipart();
 
