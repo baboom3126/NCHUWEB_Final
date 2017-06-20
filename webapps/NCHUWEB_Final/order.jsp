@@ -58,7 +58,7 @@
   <body>
 
 
-  <div class="container" style="margin-left:20%">
+  <div class="container" >
 
     <div class="col s12 m7">
       <h2 class="header">訂單查詢</h2>
