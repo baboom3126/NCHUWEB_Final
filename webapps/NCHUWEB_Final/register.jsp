@@ -53,8 +53,9 @@
                <label for="father_id">推薦人email(如無不用填寫)</label>
 <%
 String suggestEmail = "";
+String suggestID = "";
 if(session.getAttribute("suggestID")!=null){
-	String suggestID = (String)session.getAttribute("suggestID");
+	suggestID = (String)session.getAttribute("suggestID");
 	database.connectDB();
     database.query("SELECT email FROM accounts WHERE id = " + suggestID);
     ResultSet rs = database.getRS();
@@ -66,7 +67,8 @@ if(session.getAttribute("suggestID")!=null){
 }
 	
 %>
-               <input type="email" name="father_id" value="<%= suggestEmail %>" id="father_id">
+               <input type="email" name="fatherEmail" value="<%= suggestEmail %>" id="father_id">
+               <input type="hidden" name="fatherID" value="<%=suggestID %>">
 </div>
 
            </div>

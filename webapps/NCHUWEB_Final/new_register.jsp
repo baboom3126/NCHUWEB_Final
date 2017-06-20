@@ -30,18 +30,9 @@ String name=request.getParameter("name1");
 String email=request.getParameter("email");
 String pwd=request.getParameter("pwd");
 String birth=request.getParameter("date1");
-String fatherEmail=request.getParameter("father_id");
-String fatherID = "";
+String fatherEmail=request.getParameter("fatherEmail");
+String fatherID = request.getParameter("fatherID");
 
-database.connectDB1();
-database.query1("SELECT id FROM accounts WHERE email =" + fatherEmail);
-ResultSet rs1 = database.getRS1();
-if(rs1 != null) {
-	while(rs1.next()) {
-		fatherID = rs1.getString("id");
-	}
-}
-database.closeDB1();
 
 int firm_id=0;
 
@@ -189,6 +180,7 @@ Transport.send(message);
 <h5><%=name%></h5>
 <h5><%=messageDB%></h5>
 
+
 <button type="button" class="btn " name="button" onclick="location.href='login.jsp'">繼續</button>
 
 <div class="line4"></div>
@@ -212,3 +204,5 @@ Transport.send(message);
 
 
 </html>
+
+database.closeDB1();
