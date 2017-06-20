@@ -15,7 +15,7 @@
 <div class="div_main1">
 	<div class="orderdetail card">
 		<div class="line4"></div>
-		
+
 		<div class="content_table">
 			<table>
 				<tr>
@@ -33,7 +33,7 @@
 							<p class="p2" >造型1</p>
 							<img src="./images/logo_bac.png" width="150px" height="150px">
 							<br>
-							<a href="#" class="btn">預覽</a>
+							<a href="../types/type2/type2.jsp" class="btn">預覽</a>
 						</div>
 					</td>
     				<td>
@@ -41,7 +41,7 @@
     						<p class="p2">造型2</p>
     						<img src="./images/logo_bac.png" width="150px" height="150px">
     						<br>
-    						<a href="#" class="btn">預覽</a>
+    						<a href="../types/type3/" class="btn">預覽</a>
     					</div>
     				</td>
 				</tr>
