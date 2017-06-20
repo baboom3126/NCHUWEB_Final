@@ -48,7 +48,7 @@ String search=request.getParameter("search");
 
 
 database.connectDB();
-String sql="Select * from products where name like '" + search + "%';";
+String sql="Select * from products where name like '%" + search + "%';";
 database.query(sql);
 
 ResultSet rs = database.getRS();
