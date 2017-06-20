@@ -109,7 +109,7 @@ String subject = "會員認證信";
 String urlHead = "http://nchuteam10.azurewebsites.net/NCHUWEB_Final/login.jsp?mode=activate&code=";
 String link = urlHead + outStr;
 String hyper = "<a href='" + link +"'>"+link+"</a>";
-String content = "您好，" + name + "，請點選這個網址來開通帳號" + hyper;
+String content = "您好，" + name + "，請點選這個網址來開通帳號<br/>" + hyper;
 
 //get properties and se
 final String userName = "nchuwebfinal@gmail.com";
