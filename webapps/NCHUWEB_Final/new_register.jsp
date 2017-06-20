@@ -30,7 +30,18 @@ String name=request.getParameter("name1");
 String email=request.getParameter("email");
 String pwd=request.getParameter("pwd");
 String birth=request.getParameter("date1");
-String father_id=request.getParameter("father_id");
+String fatherEmail=request.getParameter("father_id");
+String fatherID = "";
+
+database.connectDB1();
+database.query1("SELECT id FROM accounts WHERE email =" + fatherEmail);
+ResultSet rs1 = database.getRS1();
+if(rs1 != null) {
+	while(rs1.next()) {
+		fatherID = rs1.getString("id");
+	}
+}
+database.closeDB1();
 
 int firm_id=0;
 
@@ -68,7 +79,7 @@ ps.setString(1,name);
 ps.setString(2,birth);
 ps.setString(3,email);
 ps.setString(4,pwd);
-ps.setString(5,father_id);
+ps.setString(5,fatherID);
 ps.setInt(6,firm_id);
 ps.setString(7,outStr);
 int a=ps.executeUpdate();
