@@ -16,7 +16,7 @@
 
 	if(session.getAttribute("accountName") == null) { //判斷是否登入
 		response.sendRedirect("login.jsp");
-	}
+	}else{
 
 	//開始撈資料放資料
 	//orders table需要資料：account_id, total, address
@@ -87,6 +87,7 @@
 	session.removeAttribute("orderName");
 
 	response.sendRedirect("order.jsp");
+	}
 %>
 
 
