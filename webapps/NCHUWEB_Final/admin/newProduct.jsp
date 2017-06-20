@@ -97,6 +97,10 @@
 
 	}
 
+
+
+
+
 	if(request.getParameter("modify") != null) {
 		String id = request.getParameter("proID");
 		String name = request.getParameter("name");
@@ -114,11 +118,16 @@
 	}
 
 	if(request.getParameter("delete") != null) {
-		String pc_id = request.getParameter("id");
+		String pc_id = request.getParameter("proID");
+		String cateID = request.getParameter("cateID");
+		String redirectURL = "productCate.jsp?id="+cateID;
 		database.connectDB();
-		database.delProduct(pc_id);
+		String sql = "DELETE FROM products WHERE id = " + pc_id;
+		PreparedStatement ps = database.getCon().prepareStatement(sql);
+		ps.executeUpdate();
 		database.closeDB();
-		response.sendRedirect("productCate.jsp");
+		response.sendRedirect(redirectURL);
+
 	}
 
 
@@ -154,6 +163,7 @@
 			}
 		}
 	}
+
 %>
 
 <div class="div_main">
@@ -180,6 +190,8 @@
         		<input type="hidden" name="cateID" value="<%= pcID %>">
         		<input type="hidden" name="proID" value="<%= proID %>">
     			<button type="submit" name="<%= submitName %>" class="btn"><%= pageButton %></button>
+    			<button type="submit" name="delete" class="btn" >刪除</button>
+
     			<button type="submit" name="button" class="btn" onclick="history.back(-1)">返回</button>
 			</form>
 		</div>
