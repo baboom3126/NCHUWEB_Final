@@ -103,6 +103,19 @@ if(session.getAttribute("suggestID")!=null){
 
       var url = "validation.jsp"; // the script where you handle the form input.
 
+        $('#label2').html(
+          '<div class="preloader-wrapper small active">'+
+            '<div class="spinner-layer spinner-green-only">'+
+              '<div class="circle-clipper left">'+
+                '<div class="circle"></div>'+
+              '</div><div class="gap-patch">'+
+                '<div class="circle"></div>'+
+              '</div><div class="circle-clipper right">'+
+                '<div class="circle"></div>'+
+              '</div>'+
+            '</div>'+
+          '</div>'
+        );
       $.ajax({
              type: "POST",
              url: url,
