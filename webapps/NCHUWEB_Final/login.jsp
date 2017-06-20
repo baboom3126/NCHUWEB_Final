@@ -60,7 +60,7 @@
           <form class="form1" action="login.jsp" method="post">
           <div class="card-content" style="text-align:left;">
 <div class="container">
-              <label for="id" id="label1">帳號</label>
+              <label for="id" id="label1">帳號(E-mail)</label>
               <input type="text" name="id" id="id1" placeholder="" >
               <label for="pwd" id="label2">密碼</label>
               <input type="password" name="pwd" id="pwd1" placeholder="">
