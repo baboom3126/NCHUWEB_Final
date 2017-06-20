@@ -4,9 +4,15 @@
 <%@include file="./layout/beforeBody.jsp" %>
 
 <%
-	String productID = request.getParameter("id");
-	if(request.getParameter("uid") != null) {
-		session.setAttribute("suggestID", request.getParameter("uid"));
+	String productID = "";
+	if(request.getParameter("id") != null) {
+		productID = request.getParameter("id");
+	}
+	if(request.getParameter("puid") != null) {
+		String productUserID = request.getParameter("puid");
+		String[] tokens = productUserID.split("-");
+		productID = tokens[0];
+		session.setAttribute("suggestID", tokens[1]);
 	}
 	String productName = "", productImage = "", productDescription = "";
 	String productPrice = "", productFirmID = "", productCreatedAt = "";
@@ -144,7 +150,7 @@ int count=1;
       <div class="card-content" >
           <h3><%= productName %><h5>$ <%= productPrice %></h5> </h3>
           
-        	<a data-toggle="tooltip" href="https://www.facebook.com/sharer/sharer.php?u=http://nchuteam10.azurewebsites.net/NCHUWEB_Final/detail.jsp?id=<%=productID%>&uid=<%=accountID %>&amp;title=<%=productName %>"  title="" data-original-title="Share on Facebook" target="_blank">
+        	<a data-toggle="tooltip" href="https://www.facebook.com/sharer/sharer.php?u=http://nchuteam10.azurewebsites.net/NCHUWEB_Final/detail.jsp?puid=<%=productID%>-<%=accountID %>"  title="" data-original-title="Share on Facebook" target="_blank">
         		<img src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png" width="48" height="48">
         	</a>
         	
