@@ -67,7 +67,7 @@ database.closeDB();
 
 
 
-String sql = "insert into accounts (name, birthday,email,password,father_id,firm_id,validation_code) values (?,?,?,?,?,?,?)";
+String sql = "insert into accounts (name, birthday,email,password,father_id,firm_id,validation_code,points) values (?,?,?,?,?,?,?,?)";
 
 if(name!=null&&check!=1){
   database.connectDB();
@@ -81,6 +81,7 @@ ps.setString(4,pwd);
 ps.setString(5,fatherID);
 ps.setInt(6,firm_id);
 ps.setString(7,outStr);
+ps.setString(8,"100");
 int a=ps.executeUpdate();
 
 messageDB="註冊成功<br>請至信箱進行認證";
