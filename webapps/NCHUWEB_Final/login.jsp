@@ -11,7 +11,7 @@
 
 	String validateStatus = "";
 	String validationCode = "";
-	
+
 	if(request.getParameter("mode") != null) {
 		validationCode = request.getParameter("code");
 		database.connectDB();
@@ -20,12 +20,12 @@
 			PreparedStatement ps=database.getCon().prepareStatement(sql);
 			ps.setString(1,validationCode);
 			ps.executeUpdate();
-			
+
 			validateStatus = "認證成功";
 		} catch (Exception ex) {
 			out.println(ex);
 		}
-		
+
 		database.closeDB();
 	}
 %>
@@ -42,7 +42,10 @@
 
 
     <div class="container">
-    <%= validateStatus %>
+			<div class="col s12 m12 l12">
+    		<span style="color:green;font-size:20pt;"><%= validateStatus %></span>
+
+			</div>
     <div class="col s12 m7">
       <h2 class="header">LOGIN</h2>
       <hr>
@@ -63,12 +66,12 @@
               <input type="password" name="pwd" id="pwd1" placeholder="">
           </div></div>
           <div class="card-action center">
-          
+
           <%
           if(request.getParameter("login") != null) {
       		String email = request.getParameter("id");
       		String password = request.getParameter("pwd");
-				String failMessage = "<p style='color:red'>帳號密碼錯誤或尚未認證</p>";
+				String failMessage = "<p style='color:red;font-size:18pt;' class='center'>帳號密碼錯誤或尚未認證</p>";
 				database.connectDB();
 				database.query("SELECT id, name, password FROM accounts WHERE email = '" + email + "' AND status = 1");
 				ResultSet rs = database.getRS();
@@ -89,7 +92,7 @@
 				database.closeDB();
 			}
 		%>
-          
+
 <button type="submit" name="login" class="waves-effect waves-light btn" style="background-color:#176D81;">登入</button>
 <button type="button" class="btn" name="button2" onclick="location.href='register.jsp'" style="background-color:#176D81;">註冊</button>
           </div>
