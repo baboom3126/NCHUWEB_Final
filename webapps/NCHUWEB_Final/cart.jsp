@@ -91,7 +91,7 @@
 	}%>
 	<div class="center">
   			<h5>總價：<span id="grandTotal"></span></h5><br>
-           <button type="button" class="btn  #81c784 green lighten-2"name="button" id="btn1">下一步 訂購</button>
+           <a href="#order_info"><button type="button" class="btn  #81c784 green lighten-2"name="button" id="btn1">下一步 訂購</button></a>
          </div>
 
 			<%
