@@ -2,6 +2,15 @@
     pageEncoding="UTF-8"%>
 <%@ page language="java" import="java.sql.*" %>
 <%@include file="./layout/beforeBody.jsp" %>
+		<script>
+      $(document).ready(function(){
+        $('.tooltipped').tooltip({delay: 50});
+        $('.button-collapse').sideNav({
+            closeOnClick: true
+          });
+
+      });
+    </script>
 <%
 	if(session.getAttribute("cartProduct") == null) { //若購物車為空，回到首頁
 		response.sendRedirect("index.jsp");

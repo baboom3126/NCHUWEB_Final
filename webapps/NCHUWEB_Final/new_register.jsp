@@ -4,7 +4,15 @@
 <%@ page import = "java.io.*,java.util.*,javax.mail.*"%>
 <%@ page import = "javax.mail.internet.*,javax.activation.*"%>
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+		<script>
+      $(document).ready(function(){
+        $('.tooltipped').tooltip({delay: 50});
+        $('.button-collapse').sideNav({
+            closeOnClick: true
+          });
 
+      });
+    </script>
 <%
 ///////////產生亂數///////////
 int strLen = 10;		// default length:10

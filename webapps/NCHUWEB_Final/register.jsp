@@ -7,6 +7,15 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+		<script>
+      $(document).ready(function(){
+        $('.tooltipped').tooltip({delay: 50});
+        $('.button-collapse').sideNav({
+            closeOnClick: true
+          });
+
+      });
+    </script>
   </head>
   <body>
 
@@ -65,7 +74,7 @@ if(session.getAttribute("suggestID")!=null){
     	}
     }
 }
-	
+
 %>
                <input type="email" name="fatherEmail" value="<%= suggestEmail %>" id="father_id">
                <input type="hidden" name="fatherID" value="<%=suggestID %>">

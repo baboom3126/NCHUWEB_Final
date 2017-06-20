@@ -2,7 +2,15 @@
 <%@ page language="java" import="java.sql.*" %>
 <%@ page import="java.lang.*"%>
 <%@include file="./layout/beforeBody.jsp" %>
+		<script>
+      $(document).ready(function(){
+        $('.tooltipped').tooltip({delay: 50});
+        $('.button-collapse').sideNav({
+            closeOnClick: true
+          });
 
+      });
+    </script>
 <%
 	String productID = "";
 	if(request.getParameter("id") != null) {
@@ -31,29 +39,29 @@
 			productCreatedAt = rs.getString("created_at");
 		}
 	}
-	
+
 	String[][] cart = (String[][])session.getAttribute("cartProduct");
 	//session.removeAttribute("cartProduct");
-	
+
 	if(request.getParameter("addCart") != null) {
 		String cartProductID = request.getParameter("cartProductID");
 		int addCartProductAmount = Integer.parseInt(request.getParameter("cartProductAmount"));
-		int checkSameID = 0; 
+		int checkSameID = 0;
 		if(session.getAttribute("cartProduct") != null) { //session中本來有cart
 			//String[][] cart = (String[][])session.getAttribute("cartProduct");
 			cart = (String[][])session.getAttribute("cartProduct");
 			int cartSize = cart.length;
-			
+
 			for(int i=0;i<cartSize;i++) {
 				if(cart[i][0].equals(cartProductID)){ //session的cart本來就有這個id
 					int inCartAmount = Integer.parseInt((String)cart[i][1]);
 					inCartAmount += addCartProductAmount;
 					cart[i][1] = Integer.toString(inCartAmount);
-					
+
 					checkSameID = 1;
 				}
 			}
-			
+
 			if(checkSameID != 1) { //session中的cart本來沒有這個id
 				int newCartSize = cartSize+1;
 				String[][] newCart = new String[newCartSize][2];
@@ -63,7 +71,7 @@
 				}
 				newCart[cartSize][0] = cartProductID;
 				newCart[cartSize][1] = Integer.toString(addCartProductAmount);
-				
+
 				session.setAttribute("cartProduct", newCart);
 			} else {
 				session.setAttribute("cartProduct", cart);
@@ -75,7 +83,7 @@
 			cart[0][1] = Integer.toString(addCartProductAmount);
 			session.setAttribute("cartProduct", cart);
 		}
-		
+
 		response.sendRedirect("cart.jsp");
 	}
 %>
@@ -149,15 +157,15 @@ int count=1;
     <div class="card-stacked">
       <div class="card-content" >
           <h3><%= productName %><h5>$ <%= productPrice %></h5> </h3>
-          
+
         	<a data-toggle="tooltip" href="https://www.facebook.com/sharer/sharer.php?u=http://nchuteam10.azurewebsites.net/NCHUWEB_Final/detail.jsp?puid=<%=productID%>-<%=accountID %>"  title="" data-original-title="Share on Facebook" target="_blank">
         		<img src="https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png" width="48" height="48">
         	</a>
-        	
+
         	<a href="http://line.naver.jp/R/msg/text/?<%=productName %>%0D%0Ahttp://nchuteam10.azurewebsites.net/NCHUWEB_Final/detail.jsp?id=<%=productID%>&uid=<%=accountID %>">
         		<img src="https://camo.githubusercontent.com/564036504b76c84af19353e39e7155a1e89f15f0/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f323634303031312f313739373137312f39643732373464632d366162332d313165332d383065622d3161383534333833373433312e6a7067" width="48" height="48" alt="用LINE傳送" />
         	</a>
-          
+
           <hr>
           <p><%= productDescription %></p>
       </div>
